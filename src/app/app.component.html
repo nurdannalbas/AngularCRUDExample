@@ -1,0 +1,24 @@
+<div class="container">
+
+  <ul class="list-group" style="list-style-type: none;">
+    <li>
+      <textarea name="" id="" cols="30" rows="2" [(ngModel)]="data.area1"></textarea>
+    </li>
+    <li>
+      <input type="text" (keyup)="input.value" #input>
+      <input type="text" (keyup)="input2.value" #input2>
+      <button (click)="createPost(input,input2)">Post</button>
+    </li>
+  </ul>
+
+  <ul class="list-group" style="list-style-type: none;" *ngFor="let i of item">
+    <li class="list-group-item">
+      <label>{{i.title}}  {{i.title2}}</label>
+    </li>
+    <li>
+      <button (click)="deletePost(i)" class="btn btn-warning btn-sm">Delete</button>
+      <button (click)="updatePost(i,data.area1)" class="btn btn-secondary btn-sm">Update</button>
+    </li>
+  </ul>
+
+</div>
